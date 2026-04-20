@@ -19,7 +19,7 @@ import com.lingma.livebgplayer.databinding.ActivityPlayBinding
 import com.lingma.livebgplayer.domain.model.OverlayConfig
 import com.lingma.livebgplayer.player.ExoPlayerManager
 import com.lingma.livebgplayer.player.VideoPlaylistManager
-import com.lingma.livebgplayer.ui.overlay.OverlayView
+import com.lingma.livebgplayer.ui.overlay.OverlayViewSimple
 import com.lingma.livebgplayer.utils.VGestureDetector
 import kotlinx.coroutines.launch
 
@@ -39,7 +39,7 @@ class PlayActivity : AppCompatActivity() {
     private lateinit var playerManager: ExoPlayerManager
     private lateinit var playlistManager: VideoPlaylistManager
     private lateinit var vGestureDetector: VGestureDetector
-    private var overlayView: OverlayView? = null
+    private var overlayView: OverlayViewSimple? = null
     private var videoUri: Uri = Uri.EMPTY
     private var volume: Float = 0f
     private var keepScreenOn: Boolean = true
@@ -240,8 +240,8 @@ class PlayActivity : AppCompatActivity() {
         if (overlayConfig != null) {
             Log.d(TAG, "收到 OverlayConfig: clock=${overlayConfig.showClock}, timer=${overlayConfig.showTimer}, danmaku=${overlayConfig.showDanmaku}")
             
-            // 创建并配置 OverlayView
-            overlayView = OverlayView(this).apply {
+            // 创建并配置 OverlayViewSimple（使用普通 View，不是 SurfaceView）
+            overlayView = OverlayViewSimple(this).apply {
                 updateConfig(overlayConfig)
                 // 直接添加到根布局（FrameLayout），确保在 PlayerView 上方
                 binding.root.addView(
@@ -249,7 +249,7 @@ class PlayActivity : AppCompatActivity() {
                     android.view.ViewGroup.LayoutParams.MATCH_PARENT,
                     android.view.ViewGroup.LayoutParams.MATCH_PARENT
                 )
-                Log.d(TAG, "OverlayView 已添加到根布局")
+                Log.d(TAG, "OverlayViewSimple 已添加到根布局")
             }
         } else {
             Log.d(TAG, "未配置 Overlay，跳过初始化")
