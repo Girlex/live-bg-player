@@ -126,44 +126,80 @@ class OverlayViewSimple @JvmOverloads constructor(
     }
 
     /**
-     * 绘制时钟
+     * 绘制时钟（带装饰）
      */
     private fun drawClock(canvas: Canvas, width: Float, height: Float, config: OverlayConfig) {
+        val timeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+        val currentTime = timeFormat.format(Date())
+        
+        // 设置文字样式
         paint.apply {
             color = Color.WHITE
             textSize = config.clockFontSize * resources.displayMetrics.scaledDensity
             typeface = Typeface.DEFAULT_BOLD
-            alpha = (255 * 0.9f).toInt() // 90% 不透明度
+            alpha = 255
         }
         
-        val timeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
-        val currentTime = timeFormat.format(Date())
-        
         val textWidth = paint.measureText(currentTime)
+        val textHeight = paint.textSize
         val padding = 40f
+        val boxPadding = 16f // 背景框内边距
         
-        val (x, y) = when (config.clockPosition) {
-            ClockPosition.TOP_LEFT -> Pair(padding, paint.textSize + padding)
-            ClockPosition.TOP_RIGHT -> Pair(width - textWidth - padding, paint.textSize + padding)
+        // 计算位置
+        val (baseX, baseY) = when (config.clockPosition) {
+            ClockPosition.TOP_LEFT -> Pair(padding, padding + textHeight)
+            ClockPosition.TOP_RIGHT -> Pair(width - textWidth - padding, padding + textHeight)
             ClockPosition.BOTTOM_LEFT -> Pair(padding, height - padding)
             ClockPosition.BOTTOM_RIGHT -> Pair(width - textWidth - padding, height - padding)
         }
         
-        canvas.drawText(currentTime, x, y, paint)
-        android.util.Log.d("OverlayView", "时钟绘制在 ($x, $y): $currentTime")
+        // 绘制背景框（圆角矩形）
+        val backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.parseColor("#CC000000") // 半透明黑色背景
+            style = Paint.Style.FILL
+        }
+        
+        val left = baseX - boxPadding
+        val top = baseY - textHeight - boxPadding / 2
+        val right = baseX + textWidth + boxPadding
+        val bottom = baseY + boxPadding / 2
+        
+        canvas.drawRoundRect(left, top, right, bottom, 12f, 12f, backgroundPaint)
+        
+        // 绘制边框
+        val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.parseColor("#4DFFFFFF") // 白色半透明边框
+            style = Paint.Style.STROKE
+            strokeWidth = 2f
+        }
+        canvas.drawRoundRect(left, top, right, bottom, 12f, 12f, borderPaint)
+        
+        // 绘制装饰图标（小圆点）
+        val dotPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.parseColor("#FF6B6B") // 红色装饰点
+            style = Paint.Style.FILL
+        }
+        
+        // 左上角装饰点
+        canvas.drawCircle(left + 8f, top + 8f, 3f, dotPaint)
+        // 右上角装饰点
+        canvas.drawCircle(right - 8f, top + 8f, 3f, dotPaint)
+        
+        // 绘制时间文字（带阴影效果）
+        val shadowPaint = Paint(paint).apply {
+            color = Color.parseColor("#40000000") // 黑色阴影
+            alpha = 100
+        }
+        canvas.drawText(currentTime, baseX + 2f, baseY + 2f, shadowPaint)
+        canvas.drawText(currentTime, baseX, baseY, paint)
+        
+        android.util.Log.d("OverlayView", "时钟绘制在 ($baseX, $baseY): $currentTime")
     }
 
     /**
-     * 绘制计时器
+     * 绘制计时器（带装饰）
      */
     private fun drawTimer(canvas: Canvas, width: Float, height: Float, config: OverlayConfig) {
-        paint.apply {
-            color = Color.WHITE
-            textSize = config.timerFontSize * resources.displayMetrics.scaledDensity
-            typeface = Typeface.MONOSPACE
-            alpha = (255 * 0.9f).toInt()
-        }
-        
         val elapsedSeconds = if (timerStartTime > 0) {
             (System.currentTimeMillis() - timerStartTime) / 1000
         } else {
@@ -183,40 +219,118 @@ class OverlayViewSimple @JvmOverloads constructor(
         val seconds = displaySeconds % 60
         val timeText = String.format("%02d:%02d:%02d", hours, minutes, seconds)
         
-        val textWidth = paint.measureText(timeText)
-        val padding = 40f
+        // 设置文字样式
+        paint.apply {
+            color = Color.WHITE
+            textSize = config.timerFontSize * resources.displayMetrics.scaledDensity
+            typeface = Typeface.MONOSPACE
+            alpha = 255
+        }
         
-        val (x, y) = when (config.timerPosition) {
-            TimerPosition.TOP_LEFT -> Pair(padding, paint.textSize + padding)
-            TimerPosition.TOP_RIGHT -> Pair(width - textWidth - padding, paint.textSize + padding)
+        val textWidth = paint.measureText(timeText)
+        val textHeight = paint.textSize
+        val padding = 40f
+        val boxPadding = 16f
+        
+        // 计算位置
+        val (baseX, baseY) = when (config.timerPosition) {
+            TimerPosition.TOP_LEFT -> Pair(padding, padding + textHeight)
+            TimerPosition.TOP_RIGHT -> Pair(width - textWidth - padding, padding + textHeight)
             TimerPosition.BOTTOM_LEFT -> Pair(padding, height - padding)
             TimerPosition.BOTTOM_RIGHT -> Pair(width - textWidth - padding, height - padding)
         }
         
-        canvas.drawText(timeText, x, y, paint)
-        android.util.Log.d("OverlayView", "计时器绘制在 ($x, $y): $timeText")
+        // 绘制渐变背景框
+        val backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.parseColor("#CC1a1a2e") // 深蓝色半透明背景
+            style = Paint.Style.FILL
+        }
+        
+        val left = baseX - boxPadding
+        val top = baseY - textHeight - boxPadding / 2
+        val right = baseX + textWidth + boxPadding
+        val bottom = baseY + boxPadding / 2
+        
+        canvas.drawRoundRect(left, top, right, bottom, 12f, 12f, backgroundPaint)
+        
+        // 绘制边框（蓝色）
+        val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.parseColor("#4D4A90E0") // 蓝色半透明边框
+            style = Paint.Style.STROKE
+            strokeWidth = 2f
+        }
+        canvas.drawRoundRect(left, top, right, bottom, 12f, 12f, borderPaint)
+        
+        // 绘制装饰图标（计时器图标 - 小圆圈）
+        val iconPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.parseColor("#4A90E0") // 蓝色
+            style = Paint.Style.STROKE
+            strokeWidth = 2f
+        }
+        canvas.drawCircle(left + 8f, top + 8f, 4f, iconPaint)
+        
+        // 绘制时间文字（带阴影）
+        val shadowPaint = Paint(paint).apply {
+            color = Color.parseColor("#40000000")
+            alpha = 100
+        }
+        canvas.drawText(timeText, baseX + 2f, baseY + 2f, shadowPaint)
+        canvas.drawText(timeText, baseX, baseY, paint)
+        
+        android.util.Log.d("OverlayView", "计时器绘制在 ($baseX, $baseY): $timeText")
     }
 
     /**
-     * 绘制弹幕（简化版 - 静态文本）
+     * 绘制弹幕（带装饰）
      */
     private fun drawDanmaku(canvas: Canvas, width: Float, height: Float, config: OverlayConfig) {
+        val textWidth = paint.measureText(config.danmakuText)
+        
+        // 设置文字样式
         paint.apply {
             color = Color.WHITE
             textSize = 18f * resources.displayMetrics.scaledDensity
-            typeface = Typeface.DEFAULT
-            alpha = (255 * 0.7f).toInt() // 70% 不透明度
+            typeface = Typeface.DEFAULT_BOLD
+            alpha = 255
         }
         
-        val textWidth = paint.measureText(config.danmakuText)
+        val textHeight = paint.textSize
         val y = height * 0.15f // 顶部 15% 位置
+        val boxPadding = 12f
         
         // 简单的滚动效果（基于时间）
         val speed = config.danmakuSpeed * 3f
-        val offsetX = (System.currentTimeMillis() / 1000f * speed) % (width + textWidth)
-        val x = width - offsetX
+        val offsetX = (System.currentTimeMillis() / 1000f * speed) % (width + textWidth + boxPadding * 2)
+        val baseX = width - offsetX
         
-        canvas.drawText(config.danmakuText, x, y, paint)
+        // 绘制背景框（渐变效果）
+        val backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.parseColor("#99000000") // 半透明黑色
+            style = Paint.Style.FILL
+        }
+        
+        val left = baseX - boxPadding
+        val top = y - textHeight - boxPadding / 2
+        val right = baseX + textWidth + boxPadding
+        val bottom = y + boxPadding / 2
+        
+        canvas.drawRoundRect(left, top, right, bottom, 20f, 20f, backgroundPaint)
+        
+        // 绘制边框（彩色）
+        val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.parseColor("#66FFD700") // 金色半透明边框
+            style = Paint.Style.STROKE
+            strokeWidth = 1.5f
+        }
+        canvas.drawRoundRect(left, top, right, bottom, 20f, 20f, borderPaint)
+        
+        // 绘制文字（带阴影）
+        val shadowPaint = Paint(paint).apply {
+            color = Color.parseColor("#40000000")
+            alpha = 100
+        }
+        canvas.drawText(config.danmakuText, baseX + 1f, y + 1f, shadowPaint)
+        canvas.drawText(config.danmakuText, baseX, y, paint)
     }
 
     /**
