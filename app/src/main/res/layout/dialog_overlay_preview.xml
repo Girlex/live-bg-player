@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a1a">
+
+    <!-- 模拟视频背景 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:alpha="0.3" />
+
+    <!-- 预览文本提示 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="📺 视频播放预览区域"
+        android:textSize="18sp"
+        android:textColor="#666666"
+        android:gravity="center" />
+
+    <!-- OverlayView 将在这里动态添加 -->
+
+</FrameLayout>

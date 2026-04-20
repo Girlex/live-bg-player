@@ -236,6 +236,16 @@
                         android:textColor="#424242"
                         app:buttonTint="#1976D2" />
 
+                    <!-- 时钟位置选择 -->
+                    <Spinner
+                        android:id="@+id/spinner_clock_position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone" />
+
                     <com.google.android.material.checkbox.MaterialCheckBox
                         android:id="@+id/checkbox_show_timer"
                         android:layout_width="wrap_content"
@@ -245,6 +255,16 @@
                         android:textColor="#424242"
                         app:buttonTint="#1976D2" />
 
+                    <!-- 计时器位置选择 -->
+                    <Spinner
+                        android:id="@+id/spinner_timer_position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone" />
+
                     <com.google.android.material.checkbox.MaterialCheckBox
                         android:id="@+id/checkbox_show_danmaku"
                         android:layout_width="wrap_content"
@@ -253,6 +273,17 @@
                         android:textSize="14sp"
                         android:textColor="#424242"
                         app:buttonTint="#1976D2" />
+
+                    <!-- 预览按钮 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_preview_overlay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👁️ 预览效果"
+                        android:textSize="14sp"
+                        android:layout_marginTop="16dp"
+                        android:layout_gravity="end"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
                 </LinearLayout>
 
