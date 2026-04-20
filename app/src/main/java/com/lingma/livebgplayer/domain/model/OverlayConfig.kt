@@ -13,6 +13,8 @@ data class OverlayConfig(
     val showClock: Boolean = false,
     val clockPosition: ClockPosition = ClockPosition.BOTTOM_RIGHT,
     val clockFontSize: Int = 16,
+    val clockAutoSwitchPosition: Boolean = false, // 是否自动切换位置
+    val clockSwitchIntervalSeconds: Int = 30, // 切换间隔（秒）
     
     // 直播计时器
     val showTimer: Boolean = false,
@@ -20,6 +22,8 @@ data class OverlayConfig(
     val timerMode: TimerMode = TimerMode.COUNT_UP,
     val timerPosition: TimerPosition = TimerPosition.BOTTOM_LEFT,
     val timerFontSize: Int = 16,
+    val timerAutoSwitchPosition: Boolean = false, // 是否自动切换位置
+    val timerSwitchIntervalSeconds: Int = 30, // 切换间隔（秒）
     
     // 弹幕模拟
     val showDanmaku: Boolean = false,
