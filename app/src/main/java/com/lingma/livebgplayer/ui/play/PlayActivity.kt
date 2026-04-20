@@ -125,7 +125,24 @@ class PlayActivity : AppCompatActivity() {
             }
         })
         
-        // 7. 开始播放
+        // 7. 初始化 V 字手势检测器
+        vGestureDetector = VGestureDetector {
+            Log.d(TAG, "检测到 V 字手势，切换视频")
+            switchToNextVideo()
+        }
+        
+        // 8. 初始化播放列表管理器
+        playlistManager = VideoPlaylistManager(applicationContext) {
+            Log.w(TAG, "播放列表为空")
+        }
+        
+        // 9. 添加视频到播放列表
+        setupVideoPlaylist()
+        
+        // 10. 初始化并添加 OverlayView
+        setupOverlayView()
+        
+        // 11. 开始播放
         lifecycleScope.launch {
             playerManager.prepareAndPlay(videoUri)
         }
@@ -166,7 +183,9 @@ class PlayActivity : AppCompatActivity() {
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        return true
+        // 优先处理 V 字手势
+        val gestureHandled = vGestureDetector.onTouchEvent(event)
+        return gestureHandled || super.onTouchEvent(event)
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
@@ -193,8 +212,73 @@ class PlayActivity : AppCompatActivity() {
         playerManager.pause()
     }
 
+    /**
+     * 设置视频播放列表
+     */
+    private fun setupVideoPlaylist() {
+        // 从 Intent 获取视频列表
+        val videoList = intent.getParcelableArrayListExtra<com.lingma.livebgplayer.domain.model.VideoItem>(EXTRA_VIDEO_LIST)
+        
+        if (videoList != null && videoList.isNotEmpty()) {
+            // 使用播放列表
+            playlistManager.addVideos(videoList)
+            Log.d(TAG, "已加载 ${videoList.size} 个视频到播放列表")
+        } else {
+            // 如果没有播放列表，只添加当前视频
+            val name = videoUri.lastPathSegment ?: "Unknown"
+            playlistManager.addVideo(videoUri, name)
+            Log.d(TAG, "已添加单个视频到播放列表")
+        }
+    }
+
+    /**
+     * 设置 OverlayView
+     */
+    private fun setupOverlayView() {
+        val overlayConfig = intent.getParcelableExtra<OverlayConfig>(EXTRA_OVERLAY_CONFIG)
+        
+        if (overlayConfig != null) {
+            // 创建并配置 OverlayView
+            overlayView = OverlayView(this).apply {
+                updateConfig(overlayConfig)
+                // 添加到 PlayerView 的父布局
+                (binding.playerView.parent as? android.view.ViewGroup)?.addView(
+                    this,
+                    android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                    android.view.ViewGroup.LayoutParams.MATCH_PARENT
+                )
+            }
+            Log.d(TAG, "OverlayView 已初始化")
+        } else {
+            Log.d(TAG, "未配置 Overlay，跳过初始化")
+        }
+    }
+
+    /**
+     * 切换到下一个视频
+     */
+    private fun switchToNextVideo() {
+        if (!playlistManager.hasNextVideo()) {
+            Log.d(TAG, "只有一个视频，无法切换")
+            return
+        }
+        
+        val nextMediaSource = playlistManager.getNextMediaSource()
+        if (nextMediaSource != null) {
+            Log.d(TAG, "切换到下一个视频: ${playlistManager.getCurrentIndex() + 1}")
+            playerManager.switchToMediaSource(nextMediaSource)
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
+        // 清理 OverlayView
+        overlayView?.let {
+            (it.parent as? android.view.ViewGroup)?.removeView(it)
+            it.hideAll()
+        }
+        overlayView = null
+        
         binding.playerView.player = null
         playerManager.release()
     }

@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Looper
 import android.util.Log
 import androidx.media3.common.MediaItem
+import androidx.media3.common.MediaSource
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.DefaultLoadControl
@@ -138,6 +139,36 @@ class ExoPlayerManager(private val context: Context) {
     fun setVolume(volume: Float) {
         exoPlayer?.volume = volume.coerceIn(0f, 1f)
     }
+
+    /**
+     * 无缝切换到新的 MediaSource
+     * @param mediaSource 新的媒体源
+     * @param resetPosition false = 保持当前位置，true = 从头开始
+     */
+    fun switchToMediaSource(mediaSource: MediaSource, resetPosition: Boolean = false) {
+        Log.d(TAG, "切换到新的视频源")
+        exoPlayer?.apply {
+            // setMediaSource 第二个参数为 false 表示不重置位置，实现无缝切换
+            setMediaSource(mediaSource, !resetPosition)
+            prepare()
+            // 保持播放状态
+            playWhenReady = true
+        }
+    }
+
+    /**
+     * 预加载下一个视频（不播放）
+     */
+    fun preloadMediaSource(mediaSource: MediaSource) {
+        Log.d(TAG, "预加载视频源")
+        // 这里可以实现更复杂的预加载逻辑
+        // 当前简化处理，实际使用时可以直接调用 switchToMediaSource
+    }
+
+    /**
+     * 获取当前播放器实例
+     */
+    fun getPlayer(): ExoPlayer? = exoPlayer
 
     fun release() {
         exoPlayer?.apply {
