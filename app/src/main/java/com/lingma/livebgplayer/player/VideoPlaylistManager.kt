@@ -3,7 +3,9 @@ package com.lingma.livebgplayer.player
 import android.content.Context
 import android.net.Uri
 import androidx.media3.common.MediaItem
-import androidx.media3.common.MediaSource
+import androidx.media3.datasource.DefaultDataSource
+import androidx.media3.exoplayer.source.MediaSource
+import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import com.lingma.livebgplayer.domain.model.VideoItem
 
 /**
@@ -137,12 +139,8 @@ class VideoPlaylistManager(
         val uri = Uri.parse(uriString)
         val mediaItem = MediaItem.fromUri(uri)
         
-        // 使用 ExoPlayerManager 的媒体源工厂
-        // 这里简化处理，实际应该注入 MediaSource.Factory
-        return androidx.media3.exoplayer.source.ProgressiveMediaSource
-            .Factory(
-                androidx.media3.datasource.DefaultDataSource.Factory(context)
-            )
+        return ProgressiveMediaSource
+            .Factory(DefaultDataSource.Factory(context))
             .createMediaSource(mediaItem)
     }
 }

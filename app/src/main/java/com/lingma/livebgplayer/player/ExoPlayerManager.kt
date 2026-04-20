@@ -5,7 +5,6 @@ import android.net.Uri
 import android.os.Looper
 import android.util.Log
 import androidx.media3.common.MediaItem
-import androidx.media3.common.MediaSource
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.DefaultLoadControl
@@ -13,6 +12,7 @@ import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.LoadControl
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
+import androidx.media3.exoplayer.source.MediaSource
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 
 class ExoPlayerManager(private val context: Context) {
