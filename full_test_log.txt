@@ -1,0 +1,152 @@
+
+04-20 23:48:38.092  1435  1553 W DeviceHAL: Error from HAL Device in function set_master_volume: Function not implemented
+04-20 23:48:38.096  1557  1557 E cutils-trace: Error opening trace file: No such file or directory (2)
+04-20 23:48:38.097  1458  1458 E cutils-trace: Error opening trace file: No such file or directory (2)
+04-20 23:48:38.100  1558  1558 E cutils-trace: Error opening trace file: No such file or directory (2)
+04-20 23:48:38.100  1435  1435 W DeviceHAL: Error from HAL Device in function set_voice_volume: Function not implemented
+04-20 23:48:38.105  1456  1456 E AudioFlinger: loadHwModule() error -22 loading module usb
+04-20 23:48:38.511  1593  1611 E KernelUidCpuFreqTimeReader: Failed to read /proc/uid_time_in_state: java.io.FileNotFoundException: /proc/uid_time_in_state (No such file or directory)
+04-20 23:48:38.514  1593  1611 E AndroidRuntime: Error reporting WTF
+04-20 23:48:38.514  1593  1611 E AndroidRuntime: java.lang.NullPointerException: Attempt to invoke interface method 'boolean android.app.IActivityManager.handleApplicationWtf(android.os.IBinder, java.lang.String, boolean, android.app.ApplicationErrorReport$ParcelableCrashInfo)' on a null object reference
+04-20 23:48:38.514  1593  1611 E KernelUidCpuFreqTimeReader: Failed to read /proc/uid_time_in_state: java.io.FileNotFoundException: /proc/uid_time_in_state (No such file or directory)
+04-20 23:48:38.600  1467  1494 E cutils-trace: Error opening trace file: No such file or directory (2)
+04-20 23:48:38.642  1593  1593 W EntropyMixer: java.io.IOException: read failed: ENODEV (No such device)
+04-20 23:48:38.642  1593  1593 W EntropyMixer: Caused by: android.system.ErrnoException: read failed: ENODEV (No such device)
+04-20 23:48:38.672  1593  1680 E StorageManagerService: android.os.ServiceSpecificException: Failed to read field SystemLocale (code 2)
+04-20 23:48:38.672  1593  1680 E StorageManagerService: 	at android.os.Parcel.createException(Parcel.java:1980)
+04-20 23:48:38.672  1593  1680 E StorageManagerService: 	at android.os.Parcel.readException(Parcel.java:1934)
+04-20 23:48:38.672  1593  1680 E StorageManagerService: 	at android.os.Parcel.readException(Parcel.java:1884)
+04-20 23:48:38.745  1593  1593 I UsbDeviceManager: java.util.NoSuchElementException
+04-20 23:48:38.747  1593  1593 E UsbDeviceManager: Error initializing UsbHandler
+04-20 23:48:38.747  1593  1593 E UsbDeviceManager: java.io.FileNotFoundException: /sys/class/android_usb/android0/state (No such file or directory)
+04-20 23:48:38.759  1593  1593 E KernelUidCpuFreqTimeReader: Failed to read /proc/uid_time_in_state: java.io.FileNotFoundException: /proc/uid_time_in_state (No such file or directory)
+04-20 23:48:38.819  1593  1593 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/gatekeeper.password.key: open failed: ENOENT (No such file or directory)
+04-20 23:48:38.819  1593  1593 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/password.key: open failed: ENOENT (No such file or directory)
+04-20 23:48:38.819  1593  1593 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/gatekeeper.pattern.key: open failed: ENOENT (No such file or directory)
+04-20 23:48:38.819  1593  1593 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/gatekeeper.gesture.key: open failed: ENOENT (No such file or directory)
+04-20 23:48:38.819  1593  1593 E LockSettingsStorage: Cannot read file java.io.FileNotFoundException: /data/system/gesture.key: open failed: ENOENT (No such file or directory)
+04-20 23:48:38.833  1593  1611 E KernelUidCpuFreqTimeReader: Failed to read /proc/uid_time_in_state: java.io.FileNotFoundException: /proc/uid_time_in_state (No such file or directory)
+04-20 23:48:38.833  1593  1611 E KernelUidCpuFreqTimeReader: Failed to read /proc/uid_time_in_state: java.io.FileNotFoundException: /proc/uid_time_in_state (No such file or directory)
+04-20 23:48:38.876  1593  1593 W InputMethodManagerService: java.lang.IllegalArgumentException: Unknown id: com.android.inputmethod.pinyin/.InputService
+04-20 23:48:38.902  1472  1576 E cutils-trace: Error opening trace file: No such file or directory (2)
+04-20 23:48:38.926  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.h264.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.927  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:qcom.decoder.avc, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.928  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.h263.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.928  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.h263.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.929  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:qcom.decoder.hevc, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.930  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.hevc.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.930  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.mpeg4.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.930  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.mpeg4.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.931  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.vp8.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.931  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.vp8.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.932  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.vp9.decoder, OMX.google.android.index.configureVideoTunnelMode) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.932  1476  1476 E OMXNodeInstance: getExtensionIndex(0xf562c7e0:google.vp9.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+04-20 23:48:38.935  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.h263.encoder, ConfigAndroidIntraRefresh(0x6f60000a)) ERROR: Undefined(0x80001001)
+04-20 23:48:38.935  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.mpeg4.encoder, ConfigAndroidIntraRefresh(0x6f60000a)) ERROR: Undefined(0x80001001)
+04-20 23:48:38.936  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.vp8.encoder, ConfigAndroidIntraRefresh(0x6f60000a)) ERROR: Undefined(0x80001001)
+04-20 23:48:38.937  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.vp9.encoder, ConfigAndroidIntraRefresh(0x6f60000a)) ERROR: Undefined(0x80001001)
+04-20 23:48:38.938  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.068  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.075  1476  1550 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.083  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.090  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.101  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.269  1593  1611 E KernelUidCpuFreqTimeReader: Failed to read /proc/uid_time_in_state: java.io.FileNotFoundException: /proc/uid_time_in_state (No such file or directory)
+04-20 23:48:39.342  1909  1909 E CarrierIdProvider: read carrier list from ota pb failure: java.io.FileNotFoundException: /data/misc/carrierid/carrier_list.pb (No such file or directory)
+04-20 23:48:39.343  1475  1475 E cutils-trace: Error opening trace file: No such file or directory (2)
+04-20 23:48:39.468  1475  1475 E wificond: Received error messsage: Operation not supported on transport endpoint
+04-20 23:48:39.470  1929  1987 E EGL_emulation: tid 1987: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 23:48:39.470  1929  1987 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76388be27a80, error=EGL_BAD_MATCH
+04-20 23:48:39.494  1593  1616 W System.err: org.json.JSONException: Value at 95 is null.
+04-20 23:48:39.494  1593  1616 D NotificationService: notifyFilters Exception!
+04-20 23:48:39.510  1593  1688 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.511  1593  1688 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.525  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.531  1436  1436 I test_channel_transport: Error creating socket for test channel.
+04-20 23:48:39.557  1476  1476 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.564  1593  1695 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.566  1593  1695 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.566  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.590  1593  1695 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.591  1593  1695 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.591  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.592  1476  1550 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.612  1476  1550 E OMXNodeInstance: getConfig(0xf562c7e0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 23:48:39.613  1593  1692 E WifiVendorHal: stopRssiMonitoring(l.2404) failed {.code = ERROR_NOT_AVAILABLE, .description = }
+04-20 23:48:39.615  1593  1695 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.617  1593  1695 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.619  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.644  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.673  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:39.673  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:40.655  1464  1464 E MediaPlayerNative: error (1, -2147483648)
+04-20 23:48:40.663  1464  1464 E MediaPlayerNative: error (1, -2147483648)
+04-20 23:48:40.666  1464  1464 E MediaPlayerNative: error (1, -2147483648)
+04-20 23:48:40.672  1438  1438 V QCamera_CallbackNotifier:     CAMERA_MSG_ERROR
+04-20 23:48:40.672  1438  1438 V QCamera_CallbackNotifier:     CAMERA_MSG_ERROR
+04-20 23:48:40.672  1438  1438 V QCamera_CallbackNotifier:     CAMERA_MSG_ERROR
+04-20 23:48:40.686  1464  1647 E MediaPlayerNative: error (1, -2147483648)
+04-20 23:48:40.688  1464  1647 E MediaPlayerNative: error (1, -2147483648)
+04-20 23:48:40.693  1464  1647 E MediaPlayerNative: error (1, -2147483648)
+04-20 23:48:40.695  1438  1438 V QCamera_CallbackNotifier:     CAMERA_MSG_ERROR
+04-20 23:48:40.695  1438  1438 V QCamera_CallbackNotifier:     CAMERA_MSG_ERROR
+04-20 23:48:40.695  1438  1438 V QCamera_CallbackNotifier:     CAMERA_MSG_ERROR
+04-20 23:48:41.460  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:41.460  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:41.512  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:41.512  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:41.820  1741  2053 E EGL_emulation: tid 2053: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 23:48:41.820  1741  2053 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x763877e32500, error=EGL_BAD_MATCH
+04-20 23:48:42.395  1929  1987 E EGL_emulation: tid 1987: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 23:48:42.395  1929  1987 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76388be27a80, error=EGL_BAD_MATCH
+04-20 23:48:42.569  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:42.569  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:42.907  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:42.909  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:42.968  1593  1616 W ActivityManager: Unable to mark boot complete for abi: arm64-v8a (android.os.ServiceSpecificException: Failed to unlink /data//dalvik-cache/arm64/.booting (code 2))
+04-20 23:48:42.969  1593  1616 W ActivityManager: Unable to mark boot complete for abi: armeabi-v7a (android.os.ServiceSpecificException: Failed to unlink /data//dalvik-cache/arm/.booting (code 2))
+04-20 23:48:43.023  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:43.024  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:43.151  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:43.152  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:43.437  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:43.439  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:43.533  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:43.534  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:43.797  2223  2296 E cutils-trace: Error opening trace file: No such file or directory (2)
+04-20 23:48:44.394  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:44.395  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:44.547  1909  1970 W System.err: java.util.NoSuchElementException
+04-20 23:48:44.548  1909  1970 E android_os_HwBinder: Uncaught exception!
+04-20 23:48:44.587  1593  1607 E ActivityManager: java.lang.SecurityException: Package com.android.launcher3 is currently frozen!
+04-20 23:48:44.593  1593  1607 E ActivityManager: java.lang.SecurityException: Package com.android.launcher3 is currently frozen!
+04-20 23:48:44.629  1593  1607 E ActivityManager: java.lang.SecurityException: Package com.android.launcher3 is currently frozen!
+04-20 23:48:44.647  1593  1895 D SntpClient: request time failed: java.net.SocketTimeoutException: Poll timed out
+04-20 23:48:44.660  1593  2041 D SntpClient: request time failed: java.net.SocketTimeoutException: Poll timed out
+04-20 23:48:44.859  2327  2345 E BitmapFactory: Unable to decode stream: java.io.FileNotFoundException: /storage/emulated/0/screenshot扭色.png (No such file or directory)
+04-20 23:48:44.929  1593  1593 E LoadedApk: java.lang.ClassNotFoundException: Didn't find class "android.support.v4.app.CoreComponentFactory" on path: DexPathList[[],nativeLibraryDirectories=[/data/app/com.android.launcher3-khv1c__BArLQdTa7-jO-nw==/lib/x86_64, /system/lib64, /system/vendor/lib64]]
+04-20 23:48:44.940  1593  1593 E LoadedApk: java.lang.ClassNotFoundException: Didn't find class "android.support.v4.app.CoreComponentFactory" on path: DexPathList[[],nativeLibraryDirectories=[/data/app/com.android.launcher3-khv1c__BArLQdTa7-jO-nw==/lib/x86_64, /system/lib64, /system/vendor/lib64]]
+04-20 23:48:45.113  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:45.114  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:45.904  2417  2471 E EGL_emulation: tid 2471: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 23:48:45.904  2417  2471 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x763888886400, error=EGL_BAD_MATCH
+04-20 23:48:47.297  1593  2588 I BootReceiver: Checking for fsck errors
+04-20 23:48:47.303  2487  2595 W System.err: org.json.JSONException: Value [{"appType":1,"currentVersion":500022}] of type org.json.JSONArray cannot be converted to JSONObject
+04-20 23:48:47.321  2186  2186 W System.err: java.lang.IllegalArgumentException: Unknown package: com.android.good.miner
+04-20 23:48:47.321  2186  2186 W System.err: 	at android.os.Parcel.createException(Parcel.java:1970)
+04-20 23:48:47.321  2186  2186 W System.err: 	at android.os.Parcel.readException(Parcel.java:1934)
+04-20 23:48:47.321  2186  2186 W System.err: 	at android.os.Parcel.readException(Parcel.java:1884)
+04-20 23:48:47.321  2186  2186 W System.err: Caused by: android.os.RemoteException: Remote stack trace:
+04-20 23:48:47.333  2186  2186 W System.err: java.lang.IllegalArgumentException: Unknown package: com.ufo.miner
+04-20 23:48:47.333  2186  2186 W System.err: 	at android.os.Parcel.createException(Parcel.java:1970)
+04-20 23:48:47.333  2186  2186 W System.err: 	at android.os.Parcel.readException(Parcel.java:1934)
+04-20 23:48:47.333  2186  2186 W System.err: 	at android.os.Parcel.readException(Parcel.java:1884)
+04-20 23:48:47.393  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:47.394  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:47.467  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:47.467  1593  1689 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 23:48:47.567  1909  2644 D SIP     : [SipPreferences] isReceivingCallsEnabled, option not set; use default value, exception: android.provider.Settings$SettingNotFoundException: sip_receive_calls
+04-20 23:48:48.118  2327  2700 W MediaScanner: Error opening directory '/oem/media/', skipping: No such file or directory.
+04-20 23:48:48.118  2327  2700 W MediaScanner: Error opening directory '/product/media/', skipping: No such file or directory.
+04-20 23:48:48.153  2186  2186 W System.err: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.lang.String.equals(java.lang.Object)' on a null object reference
+

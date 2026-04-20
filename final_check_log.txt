@@ -1,0 +1,50 @@
+
+04-20 18:14:37.047  3371  3389 E EGL_emulation: tid 3389: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:14:37.047  3371  3389 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76388be27f00, error=EGL_BAD_MATCH
+04-20 18:14:37.179  3371  3371 D PlayActivity: Surface destroyed
+04-20 18:14:37.195  3371  3425 E EGL_emulation: tid 3425: eglQueryContext(2069): error 0x3004 (EGL_BAD_ATTRIBUTE)
+04-20 18:14:37.206  3371  3371 D PlayActivity: 鎾斁鐘舵€佹敼鍙? isPlaying=false
+04-20 18:14:37.208  3371  3371 D ExoPlayerManager: Player idle
+04-20 18:14:37.208  3371  3371 D PlayActivity: 鎾斁鍣ㄧ姸鎬? IDLE
+04-20 18:14:38.013  2286  2422 E EGL_emulation: tid 2422: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:14:38.013  2286  2422 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76388bf07780, error=EGL_BAD_MATCH
+04-20 18:14:42.411  2598  3432 E EGL_emulation: tid 3432: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:14:42.411  2598  3432 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76388be27a00, error=EGL_BAD_MATCH
+04-20 18:14:42.424  2598  3432 E EGL_emulation: tid 3432: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:14:42.424  2598  3432 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76388892ce00, error=EGL_BAD_MATCH
+04-20 18:14:43.206  2598  2598 W System.err: java.lang.Exception: Toast callstack! strTip=宸插嵏杞界洿鎾儗鏅挱鏀惧櫒
+04-20 18:14:43.231  1593  1684 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 18:14:43.254  1593  1684 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 18:14:43.293  2598  3432 E EGL_emulation: tid 3432: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:14:43.293  2598  3432 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76388be27a00, error=EGL_BAD_MATCH
+04-20 18:14:43.296  1593  1685 W BestClock: java.time.DateTimeException: Missing NTP fix
+04-20 18:16:15.673  3467  3484 E EGL_emulation: tid 3484: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:16:15.673  3467  3484 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x7638927f8780, error=EGL_BAD_MATCH
+04-20 18:16:16.439  2806  2840 E EGL_emulation: tid 2840: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:16:16.439  2806  2840 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76388888ad80, error=EGL_BAD_MATCH
+04-20 18:16:17.122  3467  3484 E EGL_emulation: tid 3484: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:16:17.122  3467  3484 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x7638927f8780, error=EGL_BAD_MATCH
+04-20 18:16:18.103  1593  2404 I ActivityManager: START u0 {cmp=com.lingma.livebgplayer/.ui.play.PlayActivity (has extras)} from uid 10056
+04-20 18:16:18.178  3467  3467 D PlayActivity: 寮€濮嬪垵濮嬪寲鎾斁鍣?
+04-20 18:16:18.241  3467  3467 D ExoPlayerManager: 鍑嗗鎾斁瑙嗛: content://com.android.providers.media.documents/document/video%3A5398
+04-20 18:16:18.244  3467  3467 D ExoPlayerManager: Player buffering
+04-20 18:16:18.244  3467  3467 D PlayActivity: 鎾斁鍣ㄧ姸鎬? BUFFERING
+04-20 18:16:18.244  3467  3467 D ExoPlayerManager: 瑙嗛宸插紑濮嬫挱鏀?
+04-20 18:16:18.285  3467  3484 E EGL_emulation: tid 3484: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:16:18.285  3467  3484 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x76387a5f4a00, error=EGL_BAD_MATCH
+04-20 18:16:18.382  1474  1474 E OMXNodeInstance: setConfig(0xf562ca80:google.h264.decoder, ConfigPriority(0x6f800002)) ERROR: UnsupportedIndex(0x8000101a)
+04-20 18:16:18.382  1474  1474 E OMXNodeInstance: setConfig(0xf562ca80:google.h264.decoder, ConfigOperatingRate(0x6f800003)) ERROR: UnsupportedIndex(0x8000101a)
+04-20 18:16:18.382  1474  1474 E OMXNodeInstance: getConfig(0xf562ca80:google.h264.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: UnsupportedIndex(0x8000101a)
+04-20 18:16:18.382  1474  1474 E OMXNodeInstance: getConfig(0xf562ca80:google.h264.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+04-20 18:16:18.399  1474  1474 E OMXNodeInstance: getConfig(0xf562ca80:google.h264.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+04-20 18:16:18.400  1474  1474 E OMXNodeInstance: getConfig(0xf562ca80:google.h264.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+04-20 18:16:18.407  1474  1474 E OMXNodeInstance: setConfig(0xf562c9c0:google.aac.decoder, ConfigPriority(0x6f800002)) ERROR: Undefined(0x80001001)
+04-20 18:16:18.407  1474  1474 E OMXNodeInstance: getConfig(0xf562c9c0:google.aac.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 18:16:18.477  3467  3467 D PlayActivity: ========== 绗竴甯у凡娓叉煋 ==========
+04-20 18:16:18.516  3467  3467 D ExoPlayerManager: Player ready
+04-20 18:16:18.516  3467  3467 D PlayActivity: 鎾斁鍣ㄧ姸鎬? READY - 瑙嗛宸插氨缁?
+04-20 18:16:18.516  3467  3467 D PlayActivity: 瑙嗛灏哄: 912x1920
+04-20 18:16:18.516  3467  3467 D PlayActivity: 璁剧疆涓虹珫灞忔ā寮?
+04-20 18:16:18.517  3467  3467 D PlayActivity: 鎾斁鐘舵€佹敼鍙? isPlaying=true
+04-20 18:16:34.742  1593  3510 D SntpClient: request time failed: java.net.SocketTimeoutException: Poll timed out
+

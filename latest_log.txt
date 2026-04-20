@@ -1,0 +1,37 @@
+adb server is out of date.  killing...
+* daemon started successfully *
+--------- beginning of main
+04-20 18:09:18.435  1472  1472 I storaged: type=1400 audit(0.0:946): avc: denied { call } for scontext=u:r:storaged:s0 tcontext=u:r:init:s0 tclass=binder permissive=1
+--------- beginning of system
+04-20 18:09:18.437  1472  1494 E storaged: getDiskStats failed with result NOT_SUPPORTED and size 0
+04-20 18:09:20.311  1473  1473 W wificond: Scan already started
+04-20 18:09:21.311  1593  2284 D WificondControl: Scan result ready event
+04-20 18:09:40.292  2386  3178 D AccountMgr: json = {"gameid":"58","mnqcontent":"KrEhvP1X7qCZTW9ANEdSbW4Rd6HKhBaR4g36mLKzVi1Y\/5qMQ4K8UOH5t60ajKnf","sv":"2519","openid":"407594","sign":"5191D5EFA50B5864B21E26FAD5E37D09","deviceid":"352746028607812,Samsung,SM-S9160,d879ca1b0bf3192dfd37bef27d8668b6","pchannelid":"10500","mnqver":"9","uid":"","ismnq":"true","mnqmac":"d879ca1b0bf3192dfd37bef27d8668b6","channelid":"10502","timestamp":"1776679780287"}
+04-20 18:09:40.292  2386  3178 D AccountMgr: time = 20260420180940
+04-20 18:09:40.292  2386  3178 D AccountMgr: request_id = 5eb5dbd20c144464bafef28f70b83960
+04-20 18:09:40.292  2386  3178 D AccountMgr: deviceId = 352746028607812,Samsung,SM-S9160,d879ca1b0bf3192dfd37bef27d8668b6,1P8ESLI26I1232435NMJWUX35GH8X0IL
+04-20 18:09:40.292  2386  3178 D AccountMgr: appKey = 9ea76367f26c4cf28b9d50df293b6623
+04-20 18:09:40.295  2386  3178 D AccountMgr: JsonObject = {"sdk_version":"2.5.19","protocol_version":"1","sdk_platform":"Android","mnq_version":"0900050100","app_id":"58","channel_id":"10500","sub_channel_id":"10502","request_id":"5eb5dbd20c144464bafef28f70b83960","timestamp":"20260420180940","device_id":"352746028607812,Samsung,SM-S9160,d879ca1b0bf3192dfd37bef27d8668b6,1P8ESLI26I1232435NMJWUX35GH8X0IL","sign":"CF6923BE5F356B285F5088B5D3669644"}
+04-20 18:09:40.312  1434  1434 I writer  : type=1400 audit(0.0:947): avc: denied { ioctl } for path="/dev/fastpipe" dev="tmpfs" ino=100 ioctlcmd=6867 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 18:09:40.371  2386  2456 W Bootstrap: Unknown channel option 'SO_TIMEOUT' for channel '[id: 0xd277033d]'
+04-20 18:09:42.926  1593  1600 W System  : A resource failed to call close. 
+04-20 18:09:42.926  1593  1600 I chatty  : uid=1000(system) FinalizerDaemon identical 23 lines
+04-20 18:09:42.926  1593  1600 W System  : A resource failed to call close. 
+04-20 18:09:45.352  1457  1457 I Binder:1457_2: type=1400 audit(0.0:948): avc: denied { read write } for path="/dev/fastpipe" dev="tmpfs" ino=100 scontext=u:r:untrusted_app:s0:c55,c256,c512,c768 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+04-20 18:09:45.355  1457  1534 W MapperHal: buffer descriptor with invalid usage bits 0x2000
+04-20 18:09:45.368  1457  1534 W MapperHal: buffer descriptor with invalid usage bits 0x2000
+04-20 18:09:45.380  1457  1534 I chatty  : uid=1000(system) Binder:1457_2 identical 1 line
+04-20 18:09:45.389  1457  1534 W MapperHal: buffer descriptor with invalid usage bits 0x2000
+04-20 18:09:47.032  1454  1454 I ldinit  : type=1400 audit(0.0:949): avc: denied { read } for name="partitions" dev="proc" ino=4026532046 scontext=u:r:ldinit:s0 tcontext=u:object_r:proc:s0 tclass=file permissive=1
+04-20 18:09:47.032  1454  1454 I ldinit  : type=1400 audit(0.0:950): avc: denied { open } for path="/proc/partitions" dev="proc" ino=4026532046 scontext=u:r:ldinit:s0 tcontext=u:object_r:proc:s0 tclass=file permissive=1
+04-20 18:09:47.032  1454  1454 I ldinit  : type=1400 audit(0.0:951): avc: denied { getattr } for path="/proc/partitions" dev="proc" ino=4026532046 scontext=u:r:ldinit:s0 tcontext=u:object_r:proc:s0 tclass=file permissive=1
+04-20 18:10:00.000  1593  1606 E memtrack: Couldn't load memtrack module
+04-20 18:10:00.000  1593  1606 W android.os.Debug: failed to get memory consumption info: -1
+04-20 18:10:00.010  1593  1606 E memtrack: Couldn't load memtrack module
+04-20 18:10:00.010  1593  1606 W android.os.Debug: failed to get memory consumption info: -1
+04-20 18:10:00.016  1593  1606 E memtrack: Couldn't load memtrack module
+04-20 18:10:00.016  1593  1606 W android.os.Debug: failed to get memory consumption info: -1
+04-20 18:10:00.023  1593  1606 E memtrack: Couldn't load memtrack module
+04-20 18:10:00.023  1593  1606 W android.os.Debug: failed to get memory consumption info: -1
+04-20 18:10:00.028  1593  1606 E memtrack: Couldn't load memtrack module
+04-20 18:10:00.028  1593  1606 W android.os.Debug: failed to get memory consumption info: -1

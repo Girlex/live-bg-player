@@ -1,0 +1,34 @@
+
+04-20 18:11:10.272  1740  2143 E ndroid.systemu: Failed to open APK '/data/app/com.lingma.livebgplayer-cHBKJtM4GA46C0y_0JVI8w==/base.apk' I/O error
+04-20 18:11:10.272  1740  2143 E ndroid.systemu: Failed to open APK '/data/app/com.lingma.livebgplayer-cHBKJtM4GA46C0y_0JVI8w==/base.apk' I/O error
+04-20 18:11:10.272  1740  2143 E ndroid.systemu: Failed to open APK '/data/app/com.lingma.livebgplayer-cHBKJtM4GA46C0y_0JVI8w==/base.apk' I/O error
+04-20 18:11:10.595  3257  3274 E EGL_emulation: tid 3274: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:11:10.595  3257  3274 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x7638888e7780, error=EGL_BAD_MATCH
+04-20 18:11:12.585  2806  2840 E EGL_emulation: tid 2840: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:11:12.585  2806  2840 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x763879ec5380, error=EGL_BAD_MATCH
+04-20 18:11:13.217  3257  3274 E EGL_emulation: tid 3274: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:11:13.217  3257  3274 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x7638888e7780, error=EGL_BAD_MATCH
+04-20 18:11:14.246  1593  2283 I ActivityManager: START u0 {cmp=com.lingma.livebgplayer/.ui.play.PlayActivity (has extras)} from uid 10055
+04-20 18:11:14.268  3257  3257 D PlayActivity: 寮€濮嬪垵濮嬪寲鎾斁鍣?
+04-20 18:11:14.337  3257  3257 D ExoPlayerManager: 鍑嗗鎾斁瑙嗛: content://com.android.providers.media.documents/document/video%3A5398
+04-20 18:11:14.340  3257  3257 D ExoPlayerManager: Player buffering
+04-20 18:11:14.340  3257  3257 D PlayActivity: 鎾斁鍣ㄧ姸鎬? BUFFERING
+04-20 18:11:14.340  3257  3257 D ExoPlayerManager: 瑙嗛宸插紑濮嬫挱鏀?
+04-20 18:11:14.365  3257  3274 E EGL_emulation: tid 3274: eglSurfaceAttrib(1504): error 0x3009 (EGL_BAD_MATCH)
+04-20 18:11:14.365  3257  3274 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0x7638927cec00, error=EGL_BAD_MATCH
+04-20 18:11:14.367  3257  3257 D PlayActivity: Surface created
+04-20 18:11:14.367  3257  3257 D PlayActivity: Surface changed: 1080x1920
+04-20 18:11:14.441  1474  1474 E OMXNodeInstance: setConfig(0xf562ccc0:google.h264.decoder, ConfigPriority(0x6f800002)) ERROR: UnsupportedIndex(0x8000101a)
+04-20 18:11:14.441  1474  1474 E OMXNodeInstance: setConfig(0xf562ccc0:google.h264.decoder, ConfigOperatingRate(0x6f800003)) ERROR: UnsupportedIndex(0x8000101a)
+04-20 18:11:14.442  1474  1474 E OMXNodeInstance: getConfig(0xf562ccc0:google.h264.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: UnsupportedIndex(0x8000101a)
+04-20 18:11:14.442  1474  1474 E OMXNodeInstance: getConfig(0xf562ccc0:google.h264.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+04-20 18:11:14.458  1474  1474 E OMXNodeInstance: getConfig(0xf562ccc0:google.h264.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+04-20 18:11:14.458  1474  3004 E OMXNodeInstance: getConfig(0xf562ccc0:google.h264.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+04-20 18:11:14.458  1474  3004 E OMXNodeInstance: setConfig(0xf562c960:google.aac.decoder, ConfigPriority(0x6f800002)) ERROR: Undefined(0x80001001)
+04-20 18:11:14.458  1474  3004 E OMXNodeInstance: getConfig(0xf562c960:google.aac.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+04-20 18:11:14.542  3257  3257 D ExoPlayerManager: Player ready
+04-20 18:11:14.542  3257  3257 D PlayActivity: 鎾斁鍣ㄧ姸鎬? READY - 瑙嗛宸插氨缁?
+04-20 18:11:14.542  3257  3257 D PlayActivity: 瑙嗛灏哄: 912x1920
+04-20 18:11:14.542  3257  3257 D PlayActivity: 璁剧疆涓虹珫灞忔ā寮?
+04-20 18:11:14.542  3257  3257 D PlayActivity: 鎾斁鐘舵€佹敼鍙? isPlaying=true
+

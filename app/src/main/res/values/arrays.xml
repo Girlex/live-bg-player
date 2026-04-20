@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="loop_modes">
+        <item>单视频循环</item>
+        <item>列表顺序循环</item>
+    </string-array>
+</resources>
