@@ -16,7 +16,11 @@ import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
 import com.lingma.livebgplayer.R
 import com.lingma.livebgplayer.databinding.ActivityConfigBinding
+import com.lingma.livebgplayer.domain.model.ClockPosition
 import com.lingma.livebgplayer.domain.model.LoopMode
+import com.lingma.livebgplayer.domain.model.OverlayConfig
+import com.lingma.livebgplayer.domain.model.TimerMode
+import com.lingma.livebgplayer.domain.model.TimerPosition
 import com.lingma.livebgplayer.ui.play.PlayActivity
 
 class ConfigActivity : AppCompatActivity() {
@@ -97,10 +101,42 @@ class ConfigActivity : AppCompatActivity() {
             viewModel.setKeepScreenOn(isChecked)
         }
         
+        // 画面控件设置
+        var showClock = false
+        var showTimer = false
+        var showDanmaku = false
+        
+        binding.checkboxShowClock.setOnCheckedChangeListener { _, isChecked ->
+            showClock = isChecked
+        }
+        
+        binding.checkboxShowTimer.setOnCheckedChangeListener { _, isChecked ->
+            showTimer = isChecked
+        }
+        
+        binding.checkboxShowDanmaku.setOnCheckedChangeListener { _, isChecked ->
+            showDanmaku = isChecked
+        }
+        
         binding.btnConfirm.setOnClickListener {
             val config = viewModel.getCurrentConfig()
             if (config.videoUri != Uri.EMPTY) {
-                startPlayActivity(config)
+                // 创建 OverlayConfig
+                val overlayConfig = OverlayConfig(
+                    showClock = showClock,
+                    clockPosition = ClockPosition.BOTTOM_RIGHT,
+                    clockFontSize = 16,
+                    showTimer = showTimer,
+                    timerInitialSeconds = 0,
+                    timerMode = TimerMode.COUNT_UP,
+                    timerPosition = TimerPosition.BOTTOM_LEFT,
+                    timerFontSize = 16,
+                    showDanmaku = showDanmaku,
+                    danmakuText = "欢迎来到直播间",
+                    danmakuSpeed = 5
+                )
+                
+                startPlayActivity(config, overlayConfig)
             } else {
                 // 提示选择视频
                 Toast.makeText(this, "请先选择视频文件", Toast.LENGTH_SHORT).show()
@@ -121,9 +157,13 @@ class ConfigActivity : AppCompatActivity() {
         binding.tvSelectedPath.text = "已选择: $fileName"
     }
 
-    private fun startPlayActivity(config: com.lingma.livebgplayer.domain.model.PlayConfig) {
+    private fun startPlayActivity(
+        config: com.lingma.livebgplayer.domain.model.PlayConfig,
+        overlayConfig: OverlayConfig
+    ) {
         val intent = Intent(this, PlayActivity::class.java).apply {
             putExtra(PlayActivity.EXTRA_VIDEO_URI, config.videoUri.toString())
+            putExtra(PlayActivity.EXTRA_OVERLAY_CONFIG, overlayConfig)
             putExtra(PlayActivity.EXTRA_LOOP_MODE, config.loopMode.name)
             putExtra(PlayActivity.EXTRA_VOLUME, config.volume)
             putExtra(PlayActivity.EXTRA_KEEP_SCREEN_ON, config.keepScreenOn)
