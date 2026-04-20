@@ -50,6 +50,7 @@ class OverlayView @JvmOverloads constructor(
      * 更新配置
      */
     fun updateConfig(newConfig: OverlayConfig) {
+        android.util.Log.d("OverlayView", "更新配置: clock=${newConfig.showClock}, timer=${newConfig.showTimer}, danmaku=${newConfig.showDanmaku}")
         config = newConfig
         
         // 启动或停止计时器
@@ -60,7 +61,7 @@ class OverlayView @JvmOverloads constructor(
         }
         
         // 触发重绘
-        invalidate()
+        postInvalidate()
     }
 
     /**
@@ -109,22 +110,34 @@ class OverlayView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         
+        if (config == null) {
+            android.util.Log.w("OverlayView", "配置为空，跳过绘制")
+            return
+        }
+        
+        android.util.Log.d("OverlayView", "开始绘制 overlay")
+        
         config?.let { cfg ->
             val width = width.toFloat()
             val height = height.toFloat()
             
+            android.util.Log.d("OverlayView", "Canvas 尺寸: ${width}x${height}")
+            
             // 绘制时钟
             if (cfg.showClock) {
+                android.util.Log.d("OverlayView", "绘制时钟")
                 drawClock(canvas, width, height, cfg)
             }
             
             // 绘制计时器
             if (cfg.showTimer) {
+                android.util.Log.d("OverlayView", "绘制计时器")
                 drawTimer(canvas, width, height, cfg)
             }
             
             // 绘制弹幕
             if (cfg.showDanmaku) {
+                android.util.Log.d("OverlayView", "绘制弹幕")
                 drawDanmaku(canvas, width, height, cfg)
             }
             

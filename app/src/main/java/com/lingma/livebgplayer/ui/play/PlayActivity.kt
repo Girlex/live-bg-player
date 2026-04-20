@@ -238,17 +238,19 @@ class PlayActivity : AppCompatActivity() {
         val overlayConfig = intent.getParcelableExtra<OverlayConfig>(EXTRA_OVERLAY_CONFIG)
         
         if (overlayConfig != null) {
+            Log.d(TAG, "收到 OverlayConfig: clock=${overlayConfig.showClock}, timer=${overlayConfig.showTimer}, danmaku=${overlayConfig.showDanmaku}")
+            
             // 创建并配置 OverlayView
             overlayView = OverlayView(this).apply {
                 updateConfig(overlayConfig)
-                // 添加到 PlayerView 的父布局
-                (binding.playerView.parent as? android.view.ViewGroup)?.addView(
+                // 直接添加到根布局（FrameLayout），确保在 PlayerView 上方
+                binding.root.addView(
                     this,
                     android.view.ViewGroup.LayoutParams.MATCH_PARENT,
                     android.view.ViewGroup.LayoutParams.MATCH_PARENT
                 )
+                Log.d(TAG, "OverlayView 已添加到根布局")
             }
-            Log.d(TAG, "OverlayView 已初始化")
         } else {
             Log.d(TAG, "未配置 Overlay，跳过初始化")
         }
