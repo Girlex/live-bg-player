@@ -16,13 +16,19 @@ import androidx.lifecycle.lifecycleScope
 import androidx.media3.common.Player
 import androidx.media3.ui.PlayerView
 import com.lingma.livebgplayer.databinding.ActivityPlayBinding
+import com.lingma.livebgplayer.domain.model.OverlayConfig
 import com.lingma.livebgplayer.player.ExoPlayerManager
+import com.lingma.livebgplayer.player.VideoPlaylistManager
+import com.lingma.livebgplayer.ui.overlay.OverlayView
+import com.lingma.livebgplayer.utils.VGestureDetector
 import kotlinx.coroutines.launch
 
 class PlayActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_VIDEO_URI = "extra_video_uri"
+        const val EXTRA_VIDEO_LIST = "extra_video_list"
+        const val EXTRA_OVERLAY_CONFIG = "extra_overlay_config"
         const val EXTRA_LOOP_MODE = "extra_loop_mode"
         const val EXTRA_VOLUME = "extra_volume"
         const val EXTRA_KEEP_SCREEN_ON = "extra_keep_screen_on"
@@ -31,6 +37,9 @@ class PlayActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPlayBinding
     private lateinit var playerManager: ExoPlayerManager
+    private lateinit var playlistManager: VideoPlaylistManager
+    private lateinit var vGestureDetector: VGestureDetector
+    private var overlayView: OverlayView? = null
     private var videoUri: Uri = Uri.EMPTY
     private var volume: Float = 0f
     private var keepScreenOn: Boolean = true
